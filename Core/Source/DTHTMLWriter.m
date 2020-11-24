@@ -15,8 +15,8 @@
 #import "NSAttributedString+DTCoreText.h"
 #import "NSAttributedString+HTML.h"
 #import "DTTextAttachment.h"
-#import "NSString+HTML.h"
 #import "DTColorFunctions.h"
+#import "DTGlobal.h"
 
 #import <DTFoundation/DTVersion.h>
 
@@ -635,7 +635,7 @@
 				needsToRemovePrefix = NO;
 			}
 			
-			NSString *subString = [plainSubString stringByAddingHTMLEntities];
+            NSString *subString = [DTGlobal stringByAddingHTMLEntities: plainSubString];
 			
 			if (!subString)
 			{
@@ -990,7 +990,7 @@
 	
 	if (_useAppleConvertedSpace)
 	{
-		NSString *convertedSpaces = [retString stringByAddingAppleConvertedSpace];
+        NSString *convertedSpaces = [DTGlobal stringByAddingAppleConvertedSpace: retString];
 		
 		[output appendString:convertedSpaces];
 	}

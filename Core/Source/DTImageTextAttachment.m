@@ -11,8 +11,8 @@
 #import "DTCoreTextConstants.h"
 #import "DTHTMLElement.h"
 #import "NSString+CSS.h"
-#import "NSString+HTML.h"
 #import "DTImage+HTML.h"
+#import "DTGlobal.h"
 
 #if TARGET_OS_IPHONE
 	#import <DTFoundation/DTAnimatedGIF.h>
@@ -163,7 +163,7 @@ static NSCache *imageCache = nil;
 			
 			if (!contentURL)
 			{
-				src = [src stringByAddingHTMLEntities];
+                src = [DTGlobal stringByAddingHTMLEntities: src];
 				contentURL = [NSURL URLWithString:src relativeToURL:baseURL];
 			}
 			
@@ -439,8 +439,8 @@ static NSCache *imageCache = nil;
 	
 	for (__strong NSString *oneKey in [tmpAttributes allKeys])
 	{
-		oneKey = [oneKey stringByAddingHTMLEntities];
-		NSString *value = [[tmpAttributes objectForKey:oneKey] stringByAddingHTMLEntities];
+        oneKey = [DTGlobal stringByAddingHTMLEntities: oneKey];
+        NSString *value = [DTGlobal stringByAddingHTMLEntities: [tmpAttributes objectForKey:oneKey]];
 		[retString appendFormat:@" %@=\"%@\"", oneKey, value];
 	}
 	

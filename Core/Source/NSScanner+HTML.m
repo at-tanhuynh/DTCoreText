@@ -9,7 +9,7 @@
 #import "NSScanner+HTML.h"
 #import "NSCharacterSet+HTML.h"
 #import "DTColorFunctions.h"
-#import "NSString+HTML.h" 
+#import "DTGlobal.h"
 
 @implementation NSScanner (HTML)
 
@@ -222,7 +222,7 @@
 		}
 		
 		// decode HTML entities
-		attrValue = [attrValue stringByReplacingHTMLEntities];
+        attrValue = [DTGlobal stringByReplacingHTMLEntities: attrValue];
 	}
 	else 
 	{
@@ -230,7 +230,7 @@
 		if ([self scanUpToString:@")" intoString:&attrValue])
 		{
 			// decode HTML entities
-			attrValue = [attrValue stringByReplacingHTMLEntities];
+            attrValue = [DTGlobal stringByReplacingHTMLEntities: attrValue];
 		}
 	}
 

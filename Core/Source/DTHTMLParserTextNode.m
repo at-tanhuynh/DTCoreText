@@ -7,7 +7,7 @@
 //
 
 #import "DTHTMLParserTextNode.h"
-#import "NSString+HTML.h"
+#import "DTGlobal.h"
 
 @implementation DTHTMLParserTextNode
 {
@@ -44,7 +44,7 @@
 		[string appendString:@"   "];
 	}
 	
-	[string appendFormat:@"\"%@\"\n", [_characters stringByNormalizingWhitespace]];
+    [string appendFormat:@"\"%@\"\n", [DTGlobal stringByNormalizingWhitespace: _characters]];
 }
 
 #endif

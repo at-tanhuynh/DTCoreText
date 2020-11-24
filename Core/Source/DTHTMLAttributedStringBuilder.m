@@ -25,7 +25,8 @@
 #import "DTObjectTextAttachment.h"
 #import "DTVideoTextAttachment.h"
 
-#import "NSString+HTML.h"
+#import "DTGlobal.h"
+
 #import "NSCharacterSet+HTML.h"
 #import "NSMutableAttributedString+HTML.h"
 
@@ -425,7 +426,7 @@
 		
         if (link == nil)
 		{
-			cleanString = [cleanString stringByEncodingNonASCIICharacters];
+            cleanString = [DTGlobal stringByEncodingNonASCIICharacters: cleanString];
             link = [NSURL URLWithString:cleanString];
         }
 		
@@ -439,7 +440,7 @@
 				if (!link)
 				{
 					// NSURL did not like the link, so let's encode it
-					cleanString = [cleanString stringByAddingHTMLEntities];
+                    cleanString = [DTGlobal stringByAddingHTMLEntities: cleanString];
 					
 					link = [NSURL URLWithString:cleanString relativeToURL:self->_baseURL];
 				}
@@ -795,7 +796,7 @@
 			{
 				DTTextHTMLElement *textElement = (DTTextHTMLElement *)previousLastChild;
 				
-				if ([[textElement text] isIgnorableWhitespace])
+                if ([DTGlobal isIgnorableWhitespace: [textElement text]])
 				{
 					[strongSelf->_currentTag removeChildNode:textElement];
 				}
@@ -862,7 +863,7 @@
 									if ([strongSelf->_tmpString length] && ![[strongSelf->_tmpString string] hasSuffix:@"\n"])
 									{
 										// trim off whitespace
-										while ([[strongSelf->_tmpString string] hasSuffixCharacterFromSet:[NSCharacterSet ignorableWhitespaceCharacterSet]])
+                                        while ([DTGlobal hasSuffixCharacterFromSet:[NSCharacterSet ignorableWhitespaceCharacterSet]: [strongSelf->_tmpString string]])
 										{
 											[strongSelf->_tmpString deleteCharactersInRange:NSMakeRange([strongSelf->_tmpString length]-1, 1)];
 										}
@@ -917,7 +918,7 @@
 		
 		NSAssert(strongSelf->_currentTag, @"Cannot add text node without a current node");
 		
-		if (!strongSelf->_currentTag.preserveNewlines && [string isIgnorableWhitespace])
+        if (!strongSelf->_currentTag.preserveNewlines && [DTGlobal isIgnorableWhitespace: string])
 		{
 			// ignore whitespace as first element of block element
 			if (strongSelf->_currentTag.displayStyle!=DTHTMLElementDisplayStyleInline && ![strongSelf->_currentTag.childNodes count])
@@ -1005,7 +1006,7 @@
 		if (!strongSelf->_preserverDocumentTrailingSpaces) {
 			dispatch_group_async(strongSelf->_stringAssemblyGroup, strongSelf->_stringAssemblyQueue, ^{
 				// trim off white space at end
-				while ([[strongSelf->_tmpString string] hasSuffixCharacterFromSet:[NSCharacterSet whitespaceCharacterSet]])
+                while ([DTGlobal hasSuffixCharacterFromSet:[NSCharacterSet whitespaceCharacterSet]: [strongSelf->_tmpString string]])
 				{
 					[strongSelf->_tmpString deleteCharactersInRange:NSMakeRange([strongSelf->_tmpString length]-1, 1)];
 				}

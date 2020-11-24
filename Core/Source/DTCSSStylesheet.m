@@ -12,7 +12,7 @@
 #import "DTHTMLElement.h"
 #import "NSScanner+HTML.h"
 #import "NSString+CSS.h"
-#import "NSString+HTML.h"
+#import "DTGlobal.h"
 
 
 
