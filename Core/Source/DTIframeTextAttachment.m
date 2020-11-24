@@ -9,7 +9,7 @@
 #import "DTIframeTextAttachment.h"
 #import "DTCoreTextConstants.h"
 #import "DTHTMLElement.h"
-#import "NSString+HTML.h"
+#import "DTGlobal.h"
 
 @implementation DTIframeTextAttachment
 
@@ -102,8 +102,8 @@
 	
 	for (__strong NSString *oneKey in [tmpAttributes allKeys])
 	{
-		oneKey = [oneKey stringByAddingHTMLEntities];
-		NSString *value = [[tmpAttributes objectForKey:oneKey] stringByAddingHTMLEntities];
+        oneKey = [DTGlobal stringByAddingHTMLEntities: oneKey];
+        NSString *value = [DTGlobal stringByAddingHTMLEntities: [tmpAttributes objectForKey:oneKey]];
 		[retString appendFormat:@" %@=\"%@\"", oneKey, value];
 	}
 	

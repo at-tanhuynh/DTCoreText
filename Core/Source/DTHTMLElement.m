@@ -16,13 +16,14 @@
 #import "DTTextHTMLElement.h"
 #import "DTTextBlock.h"
 #import "DTCSSListStyle.h"
-#import "NSString+HTML.h"
 #import "NSString+CSS.h"
 #import "NSString+Paragraphs.h"
 #import "DTColorFunctions.h"
 #import "DTCoreTextParagraphStyle.h"
 #import "DTCoreTextFontDescriptor.h"
 #import "NSAttributedStringRunDelegates.h"
+
+#import "DTGlobal.h"
 
 #import "NSMutableAttributedString+HTML.h"
 #import "NSCharacterSet+HTML.h"
@@ -469,7 +470,7 @@ NSDictionary *_classesForNames = nil;
 					if (oneChild.displayStyle == DTHTMLElementDisplayStyleBlock)
 					{
 						// trim off whitespace suffix
-						while ([[tmpString string] hasSuffixCharacterFromSet:[NSCharacterSet ignorableWhitespaceCharacterSet]])
+                        while ([DTGlobal hasSuffixCharacterFromSet:[NSCharacterSet ignorableWhitespaceCharacterSet]: [tmpString string]])
 						{
 							[tmpString deleteCharactersInRange:NSMakeRange([tmpString length]-1, 1)];
 						}
@@ -486,12 +487,12 @@ NSDictionary *_classesForNames = nil;
 					if (!oneChild.containsAppleConvertedSpace)
 					{
 						// we already have a white space in the string so far
-						if ([[tmpString string] hasSuffixCharacterFromSet:[NSCharacterSet ignorableWhitespaceCharacterSet]])
+                        if ([DTGlobal hasSuffixCharacterFromSet:[NSCharacterSet ignorableWhitespaceCharacterSet]: [tmpString string]])
 						{
 							// following e.g. a BR we don't want a space or NL
 							NSCharacterSet *charactersToIgnore = [NSCharacterSet characterSetWithCharactersInString:@" \n\t"];
 							
-							while ([[nodeString string] hasPrefixCharacterFromSet:charactersToIgnore])
+                            while ([DTGlobal hasPrefixCharacterFromSet:charactersToIgnore: [nodeString string]])
 							{
 								NSString *field = [nodeString attribute:DTFieldAttribute atIndex:0 effectiveRange:NULL];
 								
@@ -1179,7 +1180,7 @@ NSDictionary *_classesForNames = nil;
 		{
 			// no op, we already inherited it
 		}
-		else if ([lineHeight isNumeric])
+        else if ([DTGlobal isNumeric: lineHeight])
 		{
 			self.paragraphStyle.lineHeightMultiple = [lineHeight floatValue];
 		}
@@ -1204,7 +1205,7 @@ NSDictionary *_classesForNames = nil;
         {
             // no op, we already inherited it
         }
-        else if ([minimumLineHeight isNumeric])
+        else if ([DTGlobal isNumeric: minimumLineHeight])
         {
             self.paragraphStyle.minimumLineHeight = [minimumLineHeight floatValue];
         }
@@ -1226,7 +1227,7 @@ NSDictionary *_classesForNames = nil;
         {
             // no op, we already inherited it
         }
-        else if ([maximumLineHeight isNumeric])
+        else if ([DTGlobal isNumeric: maximumLineHeight])
         {
             self.paragraphStyle.minimumLineHeight = [maximumLineHeight floatValue];
         }

@@ -29,6 +29,9 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		3057F51C256C9D5300526999 /* DTGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3057F51B256C9D5300526999 /* DTGlobal.m */; };
+		3057F523256C9D8000526999 /* DTGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3057F51B256C9D5300526999 /* DTGlobal.m */; };
+		3057F52A256C9D8A00526999 /* DTGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3057F51B256C9D5300526999 /* DTGlobal.m */; };
 		3A4EA52D1D475B2A009222BF /* NSNumber+RomanNumerals.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4EA50F1D475B17009222BF /* NSNumber+RomanNumerals.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A4EA52E1D475B2A009222BF /* NSNumber+RomanNumerals.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EA5101D475B17009222BF /* NSNumber+RomanNumerals.m */; };
 		3A4EA52F1D475B2B009222BF /* NSNumber+RomanNumerals.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4EA50F1D475B17009222BF /* NSNumber+RomanNumerals.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -77,7 +80,6 @@
 		94D24B2F1D4AFE7800C7F33C /* NSCoder+DTCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DE4B4318B5968D00F0BA6D /* NSCoder+DTCompatibility.m */; };
 		94D24B301D4AFE7800C7F33C /* DTImageTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AE580C1725374C00A9BF61 /* DTImageTextAttachment.m */; };
 		94D24B311D4AFE7800C7F33C /* DTTextHTMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EB84C0168B973A00D686B7 /* DTTextHTMLElement.m */; };
-		94D24B321D4AFE7800C7F33C /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A788C94914863E8700E1AFD9 /* NSString+HTML.m */; };
 		94D24B331D4AFE7800C7F33C /* NSAttributedString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A788C93B14863E8700E1AFD9 /* NSAttributedString+HTML.m */; };
 		94D24B341D4AFE7800C7F33C /* NSCharacterSet+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A788C94114863E8700E1AFD9 /* NSCharacterSet+HTML.m */; };
 		94D24B351D4AFE7800C7F33C /* DTHTMLParserTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EB84A6168B3EC000D686B7 /* DTHTMLParserTextNode.m */; };
@@ -150,7 +152,6 @@
 		94D24B7B1D4AFE7800C7F33C /* DTColor+Compatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = A788C95214863E8700E1AFD9 /* DTColor+Compatibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94D24B7C1D4AFE7800C7F33C /* NSDictionary+DTCoreText.h in Headers */ = {isa = PBXBuildFile; fileRef = A76D45111732A512006A7CDA /* NSDictionary+DTCoreText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94D24B7D1D4AFE7800C7F33C /* DTStylesheetHTMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = A7EB8537168FA33000D686B7 /* DTStylesheetHTMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94D24B7E1D4AFE7800C7F33C /* NSString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = A788C94814863E8700E1AFD9 /* NSString+HTML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94D24B7F1D4AFE7800C7F33C /* DTHTMLParserNode.h in Headers */ = {isa = PBXBuildFile; fileRef = A7EB849B168B3E9D00D686B7 /* DTHTMLParserNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94D24B801D4AFE7800C7F33C /* DTCoreTextLayouter.h in Headers */ = {isa = PBXBuildFile; fileRef = A788C91E14863E8700E1AFD9 /* DTCoreTextLayouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94D24B811D4AFE7800C7F33C /* DTAnchorHTMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = A700289716FB220B00AFEDA3 /* DTAnchorHTMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -383,8 +384,6 @@
 		A79BA6B61B46A2700086C2F6 /* NSMutableAttributedString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A788C94514863E8700E1AFD9 /* NSMutableAttributedString+HTML.m */; };
 		A79BA6B71B46A2700086C2F6 /* NSScanner+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = A788C94614863E8700E1AFD9 /* NSScanner+HTML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A79BA6B81B46A2700086C2F6 /* NSScanner+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A788C94714863E8700E1AFD9 /* NSScanner+HTML.m */; };
-		A79BA6B91B46A2700086C2F6 /* NSString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = A788C94814863E8700E1AFD9 /* NSString+HTML.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A79BA6BA1B46A2700086C2F6 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A788C94914863E8700E1AFD9 /* NSString+HTML.m */; };
 		A79BA6BB1B46A2700086C2F6 /* NSMutableString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = A7C7ACD314D924B1005A9C69 /* NSMutableString+HTML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A79BA6BC1B46A2700086C2F6 /* NSMutableString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C7ACD414D924B1005A9C69 /* NSMutableString+HTML.m */; };
 		A79BA6BD1B46A2700086C2F6 /* DTTextBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A7081EA11503645F002987F1 /* DTTextBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -512,8 +511,6 @@
 		E2262DF7163833AD00BFDAD7 /* NSMutableAttributedString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A788C94514863E8700E1AFD9 /* NSMutableAttributedString+HTML.m */; };
 		E2262DF8163833AD00BFDAD7 /* NSScanner+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = A788C94614863E8700E1AFD9 /* NSScanner+HTML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2262DF9163833AD00BFDAD7 /* NSScanner+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A788C94714863E8700E1AFD9 /* NSScanner+HTML.m */; };
-		E2262DFA163833AD00BFDAD7 /* NSString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = A788C94814863E8700E1AFD9 /* NSString+HTML.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E2262DFB163833AD00BFDAD7 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A788C94914863E8700E1AFD9 /* NSString+HTML.m */; };
 		E2262DFC163833AD00BFDAD7 /* NSMutableString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = A7C7ACD314D924B1005A9C69 /* NSMutableString+HTML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2262DFD163833AD00BFDAD7 /* NSMutableString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C7ACD414D924B1005A9C69 /* NSMutableString+HTML.m */; };
 		E2262DFE163833AD00BFDAD7 /* DTTextBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A7081EA11503645F002987F1 /* DTTextBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -792,6 +789,7 @@
 		1D6058910D05DD3D006BFB54 /* RTDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3057F51B256C9D5300526999 /* DTGlobal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DTGlobal.m; path = Core/Source/DTGlobal.m; sourceTree = "<group>"; };
 		3A4EA50F1D475B17009222BF /* NSNumber+RomanNumerals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+RomanNumerals.h"; sourceTree = "<group>"; };
 		3A4EA5101D475B17009222BF /* NSNumber+RomanNumerals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+RomanNumerals.m"; sourceTree = "<group>"; };
 		3A4EA5311D475D76009222BF /* NSNumberRomanNumeralsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNumberRomanNumeralsTest.m; sourceTree = "<group>"; };
@@ -889,7 +887,7 @@
 		A788C91014863E8700E1AFD9 /* DTAttributedTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTAttributedTextCell.h; sourceTree = "<group>"; };
 		A788C91114863E8700E1AFD9 /* DTAttributedTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DTAttributedTextCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A788C91214863E8700E1AFD9 /* DTAttributedTextContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTAttributedTextContentView.h; sourceTree = "<group>"; };
-		A788C91314863E8700E1AFD9 /* DTAttributedTextContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DTAttributedTextContentView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A788C91314863E8700E1AFD9 /* DTAttributedTextContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DTAttributedTextContentView.m; sourceTree = "<group>"; };
 		A788C91414863E8700E1AFD9 /* DTAttributedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTAttributedTextView.h; sourceTree = "<group>"; };
 		A788C91514863E8700E1AFD9 /* DTAttributedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DTAttributedTextView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A788C91814863E8700E1AFD9 /* DTCoreTextFontCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCoreTextFontCollection.h; sourceTree = "<group>"; };
@@ -917,7 +915,7 @@
 		A788C92E14863E8700E1AFD9 /* DTLinkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTLinkButton.h; sourceTree = "<group>"; };
 		A788C92F14863E8700E1AFD9 /* DTLinkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTLinkButton.m; sourceTree = "<group>"; };
 		A788C93414863E8700E1AFD9 /* DTTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTextAttachment.h; sourceTree = "<group>"; };
-		A788C93514863E8700E1AFD9 /* DTTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DTTextAttachment.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A788C93514863E8700E1AFD9 /* DTTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DTTextAttachment.m; sourceTree = "<group>"; };
 		A788C93A14863E8700E1AFD9 /* NSAttributedString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+HTML.h"; sourceTree = "<group>"; };
 		A788C93B14863E8700E1AFD9 /* NSAttributedString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+HTML.m"; sourceTree = "<group>"; };
 		A788C93E14863E8700E1AFD9 /* NSAttributedStringRunDelegates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAttributedStringRunDelegates.h; sourceTree = "<group>"; };
@@ -964,7 +962,7 @@
 		A788CA3514863EF100E1AFD9 /* DemoSnippetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSnippetsViewController.h; sourceTree = "<group>"; };
 		A788CA3614863EF100E1AFD9 /* DemoSnippetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DemoSnippetsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A788CA3714863EF100E1AFD9 /* DemoTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTextViewController.h; sourceTree = "<group>"; };
-		A788CA3814863EF100E1AFD9 /* DemoTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DemoTextViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A788CA3814863EF100E1AFD9 /* DemoTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DemoTextViewController.m; sourceTree = "<group>"; };
 		A788CA3914863EF100E1AFD9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A788CA5414863F6400E1AFD9 /* DemoApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DemoApp-Info.plist"; sourceTree = "<group>"; };
 		A788CA5514863F6400E1AFD9 /* DemoApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DemoApp-Prefix.pch"; sourceTree = "<group>"; };
@@ -978,7 +976,7 @@
 		A79499FF14C6256B00A8CCDE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		A7949A4514CAF58C00A8CCDE /* DTHTMLAttributedStringBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTHTMLAttributedStringBuilder.h; sourceTree = "<group>"; };
 		A7949A4614CAF58C00A8CCDE /* DTHTMLAttributedStringBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DTHTMLAttributedStringBuilder.m; sourceTree = "<group>"; };
-		A7949A4F14CC44D200A8CCDE /* DTCoreTextConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DTCoreTextConstants.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A7949A4F14CC44D200A8CCDE /* DTCoreTextConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DTCoreTextConstants.m; sourceTree = "<group>"; };
 		A7949A5D14CC456000A8CCDE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		A7949A5E14CC456000A8CCDE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A7949A5F14CC456000A8CCDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1072,7 +1070,7 @@
 		A7F16CF41698491400B0E843 /* NSStringCSSTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringCSSTest.h; sourceTree = "<group>"; };
 		A7F16CF51698491400B0E843 /* NSStringCSSTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringCSSTest.m; sourceTree = "<group>"; };
 		A7F34D3F16CFC7C90054A512 /* RTL.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RTL.html; sourceTree = "<group>"; };
-		A7F5671214D841E900D1F167 /* NSString+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSString+CSS.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A7F5671214D841E900D1F167 /* NSString+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSString+CSS.h"; sourceTree = "<group>"; };
 		A7F5671314D841E900D1F167 /* NSString+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSString+CSS.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A7F5671C14D8469000D1F167 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		A7F5672514D8506B00D1F167 /* NSAttributedString+SmallCaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+SmallCaps.h"; sourceTree = "<group>"; };
@@ -1185,6 +1183,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				3057F51B256C9D5300526999 /* DTGlobal.m */,
 				A7CC84C7252E1ABD0056BC22 /*  */,
 				A788C90C14863E5000E1AFD9 /* Core */,
 				A7342FF512DC343B00044B3C /* Demo */,
@@ -1763,7 +1762,6 @@
 				94D24B7B1D4AFE7800C7F33C /* DTColor+Compatibility.h in Headers */,
 				94D24B7C1D4AFE7800C7F33C /* NSDictionary+DTCoreText.h in Headers */,
 				94D24B7D1D4AFE7800C7F33C /* DTStylesheetHTMLElement.h in Headers */,
-				94D24B7E1D4AFE7800C7F33C /* NSString+HTML.h in Headers */,
 				94D24B7F1D4AFE7800C7F33C /* DTHTMLParserNode.h in Headers */,
 				94D24B801D4AFE7800C7F33C /* DTCoreTextLayouter.h in Headers */,
 				94D24B811D4AFE7800C7F33C /* DTAnchorHTMLElement.h in Headers */,
@@ -1832,7 +1830,6 @@
 				A79BA6871B46A2530086C2F6 /* DTColor+Compatibility.h in Headers */,
 				A79BA66B1B46A24A0086C2F6 /* NSDictionary+DTCoreText.h in Headers */,
 				A79BA6811B46A24F0086C2F6 /* DTStylesheetHTMLElement.h in Headers */,
-				A79BA6B91B46A2700086C2F6 /* NSString+HTML.h in Headers */,
 				A79BA6731B46A24A0086C2F6 /* DTHTMLParserNode.h in Headers */,
 				A79BA69F1B46A2660086C2F6 /* DTCoreTextLayouter.h in Headers */,
 				A79BA6791B46A24F0086C2F6 /* DTAnchorHTMLElement.h in Headers */,
@@ -1883,7 +1880,6 @@
 				E2262DF4163833AD00BFDAD7 /* NSCharacterSet+HTML.h in Headers */,
 				E2262DF6163833AD00BFDAD7 /* NSMutableAttributedString+HTML.h in Headers */,
 				E2262DF8163833AD00BFDAD7 /* NSScanner+HTML.h in Headers */,
-				E2262DFA163833AD00BFDAD7 /* NSString+HTML.h in Headers */,
 				E2262DFC163833AD00BFDAD7 /* NSMutableString+HTML.h in Headers */,
 				E2262DFE163833AD00BFDAD7 /* DTTextBlock.h in Headers */,
 				E2262EA41638485F00BFDAD7 /* DTCoreText.h in Headers */,
@@ -2407,7 +2403,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Documentation Output directory: ${BUILD_DIR}/Documentation/\"\n/usr/local/bin/appledoc --print-settings  --output \"${BUILD_DIR}/Documentation/\" \"${PROJECT_DIR}\"\nexit $?";
+			shellScript = "echo \"Documentation Output directory: ${BUILD_DIR}/Documentation/\"\n/usr/local/bin/appledoc --print-settings  --output \"${BUILD_DIR}/Documentation/\" \"${PROJECT_DIR}\"\nexit $?\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2432,6 +2428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3057F52A256C9D8A00526999 /* DTGlobal.m in Sources */,
 				94D24B0D1D4AFE7800C7F33C /* CTLineUtils.m in Sources */,
 				94D24B0E1D4AFE7800C7F33C /* NSAttributedStringRunDelegates.m in Sources */,
 				94D24B0F1D4AFE7800C7F33C /* DTLazyImageView.m in Sources */,
@@ -2469,7 +2466,6 @@
 				94D24B2F1D4AFE7800C7F33C /* NSCoder+DTCompatibility.m in Sources */,
 				94D24B301D4AFE7800C7F33C /* DTImageTextAttachment.m in Sources */,
 				94D24B311D4AFE7800C7F33C /* DTTextHTMLElement.m in Sources */,
-				94D24B321D4AFE7800C7F33C /* NSString+HTML.m in Sources */,
 				94D24B331D4AFE7800C7F33C /* NSAttributedString+HTML.m in Sources */,
 				94D24B341D4AFE7800C7F33C /* NSCharacterSet+HTML.m in Sources */,
 				94D24B351D4AFE7800C7F33C /* DTHTMLParserTextNode.m in Sources */,
@@ -2550,6 +2546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3057F523256C9D8000526999 /* DTGlobal.m in Sources */,
 				426693AD1B56F97200F9DBFC /* CTLineUtils.m in Sources */,
 				A79BA6B21B46A2700086C2F6 /* NSAttributedStringRunDelegates.m in Sources */,
 				A7B130501B4B25BF0014E109 /* DTLazyImageView.m in Sources */,
@@ -2586,7 +2583,6 @@
 				A79BA6681B46A24A0086C2F6 /* NSCoder+DTCompatibility.m in Sources */,
 				A79BA6941B46A25A0086C2F6 /* DTImageTextAttachment.m in Sources */,
 				A79BA6841B46A24F0086C2F6 /* DTTextHTMLElement.m in Sources */,
-				A79BA6BA1B46A2700086C2F6 /* NSString+HTML.m in Sources */,
 				A79BA6AC1B46A2700086C2F6 /* NSAttributedString+HTML.m in Sources */,
 				A79BA6B41B46A2700086C2F6 /* NSCharacterSet+HTML.m in Sources */,
 				A79BA6761B46A24A0086C2F6 /* DTHTMLParserTextNode.m in Sources */,
@@ -2617,6 +2613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3057F51C256C9D5300526999 /* DTGlobal.m in Sources */,
 				FD3C5FF21F510F49000352CE /* DTCoreTextGlyphRun.m in Sources */,
 				FD3C5FF31F510F49000352CE /* NSAttributedStringRunDelegates.m in Sources */,
 				FD3C5FEB1F510E9D000352CE /* DTCoreTextLayouter.m in Sources */,
@@ -2641,7 +2638,6 @@
 				E2262DF5163833AD00BFDAD7 /* NSCharacterSet+HTML.m in Sources */,
 				E2262DF7163833AD00BFDAD7 /* NSMutableAttributedString+HTML.m in Sources */,
 				E2262DF9163833AD00BFDAD7 /* NSScanner+HTML.m in Sources */,
-				E2262DFB163833AD00BFDAD7 /* NSString+HTML.m in Sources */,
 				E2262DFD163833AD00BFDAD7 /* NSMutableString+HTML.m in Sources */,
 				94DE4B4B18B5968D00F0BA6D /* NSCoder+DTCompatibility.m in Sources */,
 				E2262DFF163833AD00BFDAD7 /* DTTextBlock.m in Sources */,

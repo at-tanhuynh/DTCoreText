@@ -9,9 +9,9 @@
 #import "DTCompatibility.h"
 
 #import "DTTextHTMLElement.h"
-#import "NSString+HTML.h"
 #import "DTCoreTextFontDescriptor.h"
 #import "NSAttributedString+SmallCaps.h"
+#import "DTGlobal.h"
 
 #if TARGET_OS_IPHONE
 #import "UIFont+DTCoreText.h"
@@ -30,7 +30,7 @@
 		[string appendString:@"   "];
 	}
 	
-	[string appendFormat:@"\"%@\"\n", [_text stringByNormalizingWhitespace]];
+    [string appendFormat:@"\"%@\"\n", [DTGlobal stringByNormalizingWhitespace: _text]];
 }
 
 - (NSAttributedString *)attributedString
@@ -66,7 +66,7 @@
 		}
 		else
 		{
-			text = [_text stringByNormalizingWhitespace];
+            text = [DTGlobal stringByNormalizingWhitespace: _text];
 		}
 		
 		NSDictionary *attributes = [self attributesForAttributedStringRepresentation];
